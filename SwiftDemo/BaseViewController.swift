@@ -1,5 +1,5 @@
 //
-//  CountryFactsViewController.swift
+//  BaseViewController.swift
 //  SwiftDemo
 //
 //  Created by Vijay Kumar Baswana on 17/06/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CountryFactsViewController: BaseViewController {
+class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

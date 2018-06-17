@@ -12,6 +12,7 @@
 		341A018520D63D1800CFF782 /* SwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341A018420D63D1800CFF782 /* SwiftDemoTests.swift */; };
 		341A019020D6457200CFF782 /* CountryFactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341A018F20D6457200CFF782 /* CountryFactsViewController.swift */; };
 		341A019220D64C2D00CFF782 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 341A019120D64C2D00CFF782 /* Base.lproj */; };
+		341A019420D650EF00CFF782 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341A019320D650EF00CFF782 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		341A018620D63D1800CFF782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		341A018F20D6457200CFF782 /* CountryFactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryFactsViewController.swift; sourceTree = "<group>"; };
 		341A019120D64C2D00CFF782 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
+		341A019320D650EF00CFF782 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				341A016F20D63D1700CFF782 /* AppDelegate.swift */,
 				341A018F20D6457200CFF782 /* CountryFactsViewController.swift */,
+				341A019320D650EF00CFF782 /* BaseViewController.swift */,
 				341A019120D64C2D00CFF782 /* Base.lproj */,
 				341A017620D63D1800CFF782 /* Assets.xcassets */,
 				341A017B20D63D1800CFF782 /* Info.plist */,
@@ -195,6 +198,7 @@
 			files = (
 				341A019020D6457200CFF782 /* CountryFactsViewController.swift in Sources */,
 				341A017020D63D1700CFF782 /* AppDelegate.swift in Sources */,
+				341A019420D650EF00CFF782 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
