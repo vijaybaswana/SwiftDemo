@@ -28,6 +28,8 @@ class CountryDataViewModel: BaseViewModel {
                 // convert response into model objects
                 self.response = AboutCountry(params: info)
                 self.prepareAttributesViewModel()
+            } else {
+                self.resetResponse()
             }
             completion(isSuccess, err)
         }
@@ -35,7 +37,7 @@ class CountryDataViewModel: BaseViewModel {
     
     private func prepareAttributesViewModel() {
         guard let items = response?.rows else {
-            attributes = nil
+            resetResponse()
             return
         }
         for item in items {
@@ -48,6 +50,11 @@ class CountryDataViewModel: BaseViewModel {
             }
             attributes?.append(CountryAttributesViewModel(attributes: item))
         }
+    }
+    
+    private func resetResponse() {
+        response = nil
+        attributes = nil
     }
     
     func getTitle() -> String {
