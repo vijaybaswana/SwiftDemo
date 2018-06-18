@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CountryFactsViewController: BaseViewController {
 
     fileprivate let tableView = UITableView()
     fileprivate let countryViewModel = CountryDataViewModel()
+    fileprivate var countryAttributes: [CountryAttributesViewModel]?
     
     fileprivate struct Constants {
         static let cellIdentifier = "CountryInfoCell"
@@ -19,15 +21,22 @@ class CountryFactsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        baseDelegate = self
         setupViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        prepareData()
+    }
+    
+    fileprivate func prepareData() {
         showBusy()
         countryViewModel.fetchCountryInfo { (isSuccess, err) in
-            // do something
+            // do UI update here
+            self.title = self.countryViewModel.getTitle()
+            self.countryAttributes = self.countryViewModel.getAttributesViewModels()
+            self.tableView.reloadData()
             self.hideBusy()
         }
     }
@@ -41,6 +50,9 @@ class CountryFactsViewController: BaseViewController {
         tableView.estimatedRowHeight = 40
         view.add(subView: tableView, insets: .zero)
         
+        // register table view for custom cells
+        tableView.register(CountryAttributesTableViewCell.self as AnyClass, forCellReuseIdentifier: Constants.cellIdentifier)
+        
         // adding refresh control
         addRefreshControl(associatedView: tableView)
     }
@@ -50,6 +62,7 @@ class CountryFactsViewController: BaseViewController {
 extension CountryFactsViewController: BaseViewControllerProtocol {
     func didPullDownRefresh() {
         // do any API call/tasks here after pull down refresh
+        prepareData()
     }
 }
 
@@ -67,12 +80,14 @@ extension CountryFactsViewController: UITableViewDataSource {
 //MARK:- UITableView delegate
 extension CountryFactsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier)
+        
+        var cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier) as? CountryAttributesTableViewCell
         
         if cell == nil {
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: Constants.cellIdentifier)
+            cell = CountryAttributesTableViewCell(style: .default, reuseIdentifier: Constants.cellIdentifier)
         }
-                
+        cell?.updateCell(attrViewModel: countryAttributes![indexPath.row], indexPath: indexPath)
+        
         // in case cell is nil. Avoiding forced un-wrap.
         return cell ?? UITableViewCell()
     }
