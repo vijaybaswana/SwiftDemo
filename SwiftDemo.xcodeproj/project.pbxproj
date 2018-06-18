@@ -19,6 +19,9 @@
 		34B8FC5F20D75FDC00D3942E /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B8FC5E20D75FDC00D3942E /* ViewExtensions.swift */; };
 		34B8FC6620D780B300D3942E /* CountryDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B8FC6520D780B300D3942E /* CountryDataViewModel.swift */; };
 		34B8FC6820D780C000D3942E /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B8FC6720D780C000D3942E /* BaseViewModel.swift */; };
+		34B8FC6B20D7868A00D3942E /* CountryInfoFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B8FC6A20D7868A00D3942E /* CountryInfoFacade.swift */; };
+		34B8FC6E20D786E200D3942E /* CountryDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B8FC6D20D786E200D3942E /* CountryDataService.swift */; };
+		34B8FC7120D78FF100D3942E /* AboutCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B8FC7020D78FF100D3942E /* AboutCountry.swift */; };
 		4CFCA1B26035503E00A06EBA /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5961F24768B4A9D622BE5D /* Pods_SwiftDemo.framework */; };
 		A517B83B8E17A5CE40F9462C /* Pods_SwiftDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F509E130FEA0C07803514E95 /* Pods_SwiftDemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -51,6 +54,9 @@
 		34B8FC5E20D75FDC00D3942E /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		34B8FC6520D780B300D3942E /* CountryDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDataViewModel.swift; sourceTree = "<group>"; };
 		34B8FC6720D780C000D3942E /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		34B8FC6A20D7868A00D3942E /* CountryInfoFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryInfoFacade.swift; sourceTree = "<group>"; };
+		34B8FC6D20D786E200D3942E /* CountryDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDataService.swift; sourceTree = "<group>"; };
+		34B8FC7020D78FF100D3942E /* AboutCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCountry.swift; sourceTree = "<group>"; };
 		4A5961F24768B4A9D622BE5D /* Pods_SwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E64B163A34D63242D52BC3 /* Pods-SwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B901B16DBCA71B4D0CB6258C /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,9 +118,12 @@
 		341A016E20D63D1600CFF782 /* SwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				34B8FC6F20D78FD400D3942E /* Models */,
 				34B8FC5920D7594300D3942E /* Utilities */,
 				34B8FC5120D755E000D3942E /* Controllers */,
+				34B8FC6920D7865E00D3942E /* Facade */,
 				34B8FC6420D7807F00D3942E /* ViewModels */,
+				34B8FC6C20D786C300D3942E /* Services */,
 				341A016F20D63D1700CFF782 /* AppDelegate.swift */,
 				341A019120D64C2D00CFF782 /* Base.lproj */,
 				341A017620D63D1800CFF782 /* Assets.xcassets */,
@@ -159,6 +168,30 @@
 				34B8FC6520D780B300D3942E /* CountryDataViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		34B8FC6920D7865E00D3942E /* Facade */ = {
+			isa = PBXGroup;
+			children = (
+				34B8FC6A20D7868A00D3942E /* CountryInfoFacade.swift */,
+			);
+			path = Facade;
+			sourceTree = "<group>";
+		};
+		34B8FC6C20D786C300D3942E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				34B8FC6D20D786E200D3942E /* CountryDataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		34B8FC6F20D78FD400D3942E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				34B8FC7020D78FF100D3942E /* AboutCountry.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		4B0EA452D07534AD9BFF8649 /* Frameworks */ = {
@@ -298,12 +331,14 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftOverlays/SwiftOverlays.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftOverlays.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -335,6 +370,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34B8FC7120D78FF100D3942E /* AboutCountry.swift in Sources */,
+				34B8FC6E20D786E200D3942E /* CountryDataService.swift in Sources */,
+				34B8FC6B20D7868A00D3942E /* CountryInfoFacade.swift in Sources */,
 				34B8FC5D20D75A0300D3942E /* Constants.swift in Sources */,
 				34B8FC5B20D7596C00D3942E /* StringExtensions.swift in Sources */,
 				34B8FC6620D780B300D3942E /* CountryDataViewModel.swift in Sources */,

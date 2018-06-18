@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class CountryDataViewModel: BaseViewModel {
+    
+    func fetchCountryInfo(completion: @escaping BaseViewModelCompletionBlock) {
+        CountryInfoFacade().fetchData { (isSuccess, countryInfo, err) in
+            completion(isSuccess, err)
+        }
+    }
     
     func getNumberOfSections() -> Int {
         return 1

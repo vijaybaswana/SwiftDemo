@@ -23,6 +23,15 @@ class CountryFactsViewController: BaseViewController {
         setupViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showBusy()
+        countryViewModel.fetchCountryInfo { (isSuccess, err) in
+            // do something
+            self.hideBusy()
+        }
+    }
+    
     private func setupViews() {
         // table view initialisation
         tableView.delegate = self
