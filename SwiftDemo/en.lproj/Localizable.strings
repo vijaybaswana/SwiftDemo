@@ -7,3 +7,4 @@
 */
 
 "loading.title" = "Please wait...";
+"generic.error.message" = "Something is technically wrong.\nPlease try again later or pull down to refresh...";

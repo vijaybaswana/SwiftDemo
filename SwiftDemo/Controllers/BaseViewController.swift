@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftOverlays
+import SnapKit
 
 @objc protocol BaseViewControllerProtocol {
     @objc func didPullDownRefresh()
@@ -42,5 +43,24 @@ extension BaseViewController {
     func addRefreshControl(associatedView: UIView) {
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         associatedView.addSubview(refreshControl)
+    }
+    
+    func showFailureOverlay(message: String) {
+        let container = UIView()
+        container.backgroundColor = .darkGray
+        let messageLabel = UILabel()
+        container.addSubview(messageLabel)
+        
+        messageLabel.snp.makeConstraints { (make) in
+            make.leading.equalTo(container).offset(10)
+            make.trailing.equalTo(container).offset(-10)
+            make.top.equalTo(container).offset(10)
+            make.bottom.equalTo(container).offset(-10)
+        }
+        messageLabel.numberOfLines = 3
+        messageLabel.text = message
+        messageLabel.textColor = .white
+        
+        UIViewController.showOnTopOfStatusBar(container, duration: 5)
     }
 }

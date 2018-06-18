@@ -38,6 +38,9 @@ class CountryFactsViewController: BaseViewController {
             self.countryAttributes = self.countryViewModel.getAttributesViewModels()
             self.tableView.reloadData()
             self.hideBusy()
+            if !isSuccess {
+                self.showFailureOverlay(message: err?.localizedDescription ?? "generic.error.message".localizedText())
+            }
         }
     }
     
