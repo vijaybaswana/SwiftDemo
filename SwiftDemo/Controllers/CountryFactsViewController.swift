@@ -10,7 +10,8 @@ import UIKit
 
 class CountryFactsViewController: BaseViewController {
 
-    let tableView = UITableView()
+    fileprivate let tableView = UITableView()
+    fileprivate let countryViewModel = CountryDataViewModel()
     
     fileprivate struct Constants {
         static let cellIdentifier = "CountryInfoCell"
@@ -46,11 +47,11 @@ extension CountryFactsViewController: BaseViewControllerProtocol {
 //MARK:- UITableView datasource
 extension CountryFactsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return countryViewModel.getNumberOfSections()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return countryViewModel.getNumberOfRows()
     }
 }
 
