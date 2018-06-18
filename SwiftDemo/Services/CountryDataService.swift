@@ -11,12 +11,11 @@ import Alamofire
 import SwiftyJSON
 
 class CountryDataService: NSObject {
+    
+    private let url = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
 
     func fetchCountryInfo(completion: @escaping (Bool, JSON?, Error?) -> Void) {
-        let headers: HTTPHeaders = [
-            "Accept": "application/json"
-        ]
-        Alamofire.request("https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json", headers: headers)
+        Alamofire.request(url, headers: getHeaders())
         .responseData { (response) in
             switch response.result {
             case .success:
@@ -34,5 +33,11 @@ class CountryDataService: NSObject {
                 break
             }
         }
+    }
+    
+    private func getHeaders() -> HTTPHeaders {
+        return [
+            "Accept": "application/json"
+        ]
     }
 }
