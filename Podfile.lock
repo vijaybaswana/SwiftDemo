@@ -1,16 +1,20 @@
 PODS:
+  - SnapKit (4.0.0)
   - SwiftOverlays (4.0.1)
 
 DEPENDENCIES:
+  - SnapKit (~> 4.0.0)
   - SwiftOverlays (~> 4.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - SnapKit
     - SwiftOverlays
 
 SPEC CHECKSUMS:
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftOverlays: dae1efb029c9401d357044dd70fd2cfce791fcb0
 
-PODFILE CHECKSUM: 2ff42390aec3ef2d1d96a49fef5ed1f56ad02f0b
+PODFILE CHECKSUM: 25c9413be7e2b88df3b4e4a6782d1f0edd92c083
 
 COCOAPODS: 1.5.3

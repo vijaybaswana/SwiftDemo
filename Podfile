@@ -7,6 +7,7 @@ target 'SwiftDemo' do
 
   # Pods for SwiftDemo
   pod 'SwiftOverlays', '~> 4.0.0'
+  pod 'SnapKit', '~> 4.0.0'
 
   target 'SwiftDemoTests' do
     inherit! :search_paths
