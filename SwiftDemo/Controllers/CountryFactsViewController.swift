@@ -23,12 +23,23 @@ class CountryFactsViewController: BaseViewController {
     }
     
     private func setupViews() {
+        // table view initialisation
         tableView.delegate = self
         tableView.dataSource = self
+        // using automatic dimensions to adjust cell height as per the content
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 40
-        
         view.add(subView: tableView, insets: .zero)
+        
+        // adding refresh control
+        addRefreshControl(associatedView: tableView)
+    }
+}
+
+//MARK:- BaseVC delegates
+extension CountryFactsViewController: BaseViewControllerProtocol {
+    func didPullDownRefresh() {
+        // do any API call/tasks here after pull down refresh
     }
 }
 
