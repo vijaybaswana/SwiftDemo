@@ -1,20 +1,24 @@
 PODS:
+  - Alamofire (4.7.2)
   - SnapKit (4.0.0)
   - SwiftOverlays (4.0.1)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.7)
   - SnapKit (~> 4.0.0)
   - SwiftOverlays (~> 4.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - SnapKit
     - SwiftOverlays
 
 SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftOverlays: dae1efb029c9401d357044dd70fd2cfce791fcb0
 
-PODFILE CHECKSUM: 25c9413be7e2b88df3b4e4a6782d1f0edd92c083
+PODFILE CHECKSUM: 31c6ab63132ecf7b0c69d157d8d6979f3aa36c75
 
 COCOAPODS: 1.5.3
