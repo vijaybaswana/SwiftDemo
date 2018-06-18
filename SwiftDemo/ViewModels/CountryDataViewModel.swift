@@ -20,6 +20,7 @@ class CountryDataViewModel: BaseViewModel {
     /// - Parameter completion: this will have 2 params, Bool - can be used to check if the API call was successful. Error - will inform about the failure
     func fetchCountryInfo(completion: @escaping BaseViewModelCompletionBlock) {
         CountryInfoFacade().fetchData { (isSuccess, countryInfo, err) in
+            self.resetResponse()
             if isSuccess {
                 guard let info = countryInfo else {
                     completion(false, err)
@@ -28,8 +29,6 @@ class CountryDataViewModel: BaseViewModel {
                 // convert response into model objects
                 self.response = AboutCountry(params: info)
                 self.prepareAttributesViewModel()
-            } else {
-                self.resetResponse()
             }
             completion(isSuccess, err)
         }
