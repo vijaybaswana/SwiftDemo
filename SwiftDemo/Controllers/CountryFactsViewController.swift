@@ -61,7 +61,7 @@ extension CountryFactsViewController: UITableViewDelegate {
         var cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier)
         
         if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: Constants.cellIdentifier)
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: Constants.cellIdentifier)
         }
                 
         // in case cell is nil. Avoiding forced un-wrap.
