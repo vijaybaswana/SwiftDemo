@@ -51,6 +51,7 @@ class CountryFactsViewController: BaseViewController {
         // using automatic dimensions to adjust cell height as per the content
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 40
+        tableView.allowsSelection = false
         view.add(subView: tableView, insets: .zero)
         
         // register table view for custom cells
@@ -90,6 +91,7 @@ extension CountryFactsViewController: UITableViewDelegate {
             cell = CountryAttributesTableViewCell(style: .default, reuseIdentifier: Constants.cellIdentifier)
         }
         cell?.updateCell(attrViewModel: countryAttributes![indexPath.row], indexPath: indexPath)
+        cell?.selectionStyle = .none
         
         // in case cell is nil. Avoiding forced un-wrap.
         return cell ?? UITableViewCell()
