@@ -1,5 +1,5 @@
 //
-//  AboutCountry.swift
+//  CountryAttributes.swift
 //  SwiftDemo
 //
 //  Created by Vijay Kumar Baswana on 18/06/18.
@@ -9,17 +9,16 @@
 import UIKit
 import SwiftyJSON
 
-class AboutCountry {
-
+class CountryAttributes {
+    
     var title: String?
-    var rows = [CountryAttributes]()
+    var attributeDescription: String?
+    var imageUrl: String?
     
     init(params: JSON) {
         title = params["title"].string
-        if let items = params["rows"].array {
-            for item in items {
-                rows.append(CountryAttributes(params: item))
-            }
-        }
+        attributeDescription = params["description"].string
+        imageUrl = params["imageHref"].string
     }
+
 }

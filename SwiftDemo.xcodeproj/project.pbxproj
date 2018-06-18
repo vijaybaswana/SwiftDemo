@@ -22,6 +22,8 @@
 		34B8FC6B20D7868A00D3942E /* CountryInfoFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B8FC6A20D7868A00D3942E /* CountryInfoFacade.swift */; };
 		34B8FC6E20D786E200D3942E /* CountryDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B8FC6D20D786E200D3942E /* CountryDataService.swift */; };
 		34B8FC7120D78FF100D3942E /* AboutCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B8FC7020D78FF100D3942E /* AboutCountry.swift */; };
+		34B8FC7320D7D5BD00D3942E /* CountryAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B8FC7220D7D5BD00D3942E /* CountryAttributes.swift */; };
+		34B8FC7520D7DAEC00D3942E /* CountryAttributesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B8FC7420D7DAEC00D3942E /* CountryAttributesViewModel.swift */; };
 		4CFCA1B26035503E00A06EBA /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5961F24768B4A9D622BE5D /* Pods_SwiftDemo.framework */; };
 		A517B83B8E17A5CE40F9462C /* Pods_SwiftDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F509E130FEA0C07803514E95 /* Pods_SwiftDemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +59,8 @@
 		34B8FC6A20D7868A00D3942E /* CountryInfoFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryInfoFacade.swift; sourceTree = "<group>"; };
 		34B8FC6D20D786E200D3942E /* CountryDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDataService.swift; sourceTree = "<group>"; };
 		34B8FC7020D78FF100D3942E /* AboutCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCountry.swift; sourceTree = "<group>"; };
+		34B8FC7220D7D5BD00D3942E /* CountryAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryAttributes.swift; sourceTree = "<group>"; };
+		34B8FC7420D7DAEC00D3942E /* CountryAttributesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryAttributesViewModel.swift; sourceTree = "<group>"; };
 		4A5961F24768B4A9D622BE5D /* Pods_SwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E64B163A34D63242D52BC3 /* Pods-SwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B901B16DBCA71B4D0CB6258C /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 			children = (
 				34B8FC6720D780C000D3942E /* BaseViewModel.swift */,
 				34B8FC6520D780B300D3942E /* CountryDataViewModel.swift */,
+				34B8FC7420D7DAEC00D3942E /* CountryAttributesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				34B8FC7020D78FF100D3942E /* AboutCountry.swift */,
+				34B8FC7220D7D5BD00D3942E /* CountryAttributes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -375,10 +381,12 @@
 				34B8FC6B20D7868A00D3942E /* CountryInfoFacade.swift in Sources */,
 				34B8FC5D20D75A0300D3942E /* Constants.swift in Sources */,
 				34B8FC5B20D7596C00D3942E /* StringExtensions.swift in Sources */,
+				34B8FC7320D7D5BD00D3942E /* CountryAttributes.swift in Sources */,
 				34B8FC6620D780B300D3942E /* CountryDataViewModel.swift in Sources */,
 				341A019020D6457200CFF782 /* CountryFactsViewController.swift in Sources */,
 				341A017020D63D1700CFF782 /* AppDelegate.swift in Sources */,
 				34B8FC6820D780C000D3942E /* BaseViewModel.swift in Sources */,
+				34B8FC7520D7DAEC00D3942E /* CountryAttributesViewModel.swift in Sources */,
 				34B8FC5F20D75FDC00D3942E /* ViewExtensions.swift in Sources */,
 				341A019420D650EF00CFF782 /* BaseViewController.swift in Sources */,
 			);

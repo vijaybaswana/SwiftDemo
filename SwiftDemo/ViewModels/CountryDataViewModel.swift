@@ -11,17 +11,58 @@ import SwiftyJSON
 
 class CountryDataViewModel: BaseViewModel {
     
+    private var response: AboutCountry?
+    private var attributes: [CountryAttributesViewModel]?
+    
+    
+    /// Method will fetch information related to country
+    ///
+    /// - Parameter completion: this will have 2 params, Bool - can be used to check if the API call was successful. Error - will inform about the failure
     func fetchCountryInfo(completion: @escaping BaseViewModelCompletionBlock) {
         CountryInfoFacade().fetchData { (isSuccess, countryInfo, err) in
+            if isSuccess {
+                guard let info = countryInfo else {
+                    completion(false, err)
+                    return
+                }
+                // convert response into model objects
+                self.response = AboutCountry(params: info)
+                self.prepareAttributesViewModel()
+            }
             completion(isSuccess, err)
         }
     }
     
+    private func prepareAttributesViewModel() {
+        guard let items = response?.rows else {
+            attributes = nil
+            return
+        }
+        for item in items {
+            // ignore item if title and description both are nil
+            guard item.title != nil || item.attributeDescription != nil else {
+                continue
+            }
+            if attributes == nil {
+                attributes = [CountryAttributesViewModel]()
+            }
+            attributes?.append(CountryAttributesViewModel(attributes: item))
+        }
+    }
+    
+    func getTitle() -> String {
+        return response?.title ?? Constants.emptyString
+    }
+    
+    func getAttributesViewModels() -> [CountryAttributesViewModel]? {
+        return attributes
+    }
+    
     func getNumberOfSections() -> Int {
-        return 1
+        return attributes == nil ? 0 : 1
     }
     
     func getNumberOfRows() -> Int {
-        return 1
+        return attributes?.count ?? 0
     }
 }
