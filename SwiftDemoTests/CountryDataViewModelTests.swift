@@ -17,6 +17,13 @@ class CountryDataViewModelTests: XCTestCase {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         viewModel = CountryDataViewModel()
+        let expectation = XCTestExpectation(description: "Fetch country info")
+        
+        viewModel.fetchCountryInfo { (isSuccess, err) in
+            expectation.fulfill()
+        }
+        // wait for the API call to finish with a timeout of 10 seconds
+        wait(for: [expectation], timeout: 10.0)
     }
     
     override func tearDown() {
@@ -25,29 +32,13 @@ class CountryDataViewModelTests: XCTestCase {
         super.tearDown()
     }
     
-    func testIfDataFetchIsSuccessful() {
-        let expectation = XCTestExpectation(description: "Fetch country info")
-        
-        viewModel.fetchCountryInfo { (isSuccess, err) in
-            // Use XCTAssert and related functions to verify your tests produce the correct results.
-            XCTAssert(isSuccess)
-            expectation.fulfill()
-        }
-        // wait for the API call to finish with a timeout of 10 seconds
-        wait(for: [expectation], timeout: 10.0)
+    func testTitleValidity() {
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssert(self.viewModel.getTitle() != Constants.emptyString && self.viewModel.getNumberOfRows() > 0)
     }
     
-    func testResponseValidity() {
-        // This is an example of a functional test case.
-        let expectation = XCTestExpectation(description: "Fetch country info")
-            
-        viewModel.fetchCountryInfo { (isSuccess, err) in
-            // check if the required fields are received as part of response.
-            // Use XCTAssert and related functions to verify your tests produce the correct results.
-            XCTAssert(self.viewModel.getTitle() != Constants.emptyString && self.viewModel.getNumberOfRows() > 0)
-            expectation.fulfill()
-        }
-        // wait for the API call to finish with a timeout of 10 seconds
-        wait(for: [expectation], timeout: 10.0)
+    func testAttributesValidity() {
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssert(self.viewModel.getNumberOfRows() > 0)
     }
 }
