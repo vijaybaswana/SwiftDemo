@@ -5,5 +5,5 @@ Project is using following pods:
 SwiftOverlays for UI elements like loading indicator etc.
 SnapKit for Autolayout.
 Alamofire for network calls.
-SwiftyJSON for converting response to JSON
-SDWebImage for downloading images synchronously
+SwiftyJSON for converting response to JSON.
+SDWebImage for downloading images synchronously.
