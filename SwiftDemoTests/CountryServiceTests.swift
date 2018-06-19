@@ -46,10 +46,14 @@ class CountryServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
+    func testServicePerformance() {
+        // This will measure time taken by service call and converting to JSON object using SwiftyJson.
         self.measure {
-            // Put the code you want to measure the time of here.
+            let expectation = XCTestExpectation(description: "Fetch country info")
+            service.fetchCountryInfo { (_, _, _) in
+                expectation.fulfill()
+            }
+            wait(for: [expectation], timeout: 10.0)
         }
     }
 }
