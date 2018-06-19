@@ -31,4 +31,8 @@ class CountryAttributesViewModel: BaseViewModel {
     func getImageUrl() -> String? {
         return imageUrl
     }
+    
+    func isValid() -> Bool {
+        return title != nil || attrDescription != nil
+    }
 }
