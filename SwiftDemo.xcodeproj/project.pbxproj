@@ -26,6 +26,7 @@
 		34B8FC7820D7E9ED00D3942E /* CountryAttributesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B8FC7720D7E9ED00D3942E /* CountryAttributesTableViewCell.swift */; };
 		34F31DA920D8AC4100F1EDC7 /* CountryDataViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F31DA820D8AC4100F1EDC7 /* CountryDataViewModelTests.swift */; };
 		34F31DAB20D8B76400F1EDC7 /* CountryAttributesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F31DAA20D8B76400F1EDC7 /* CountryAttributesViewModelTests.swift */; };
+		34F31DAD20D8BC2400F1EDC7 /* CountryServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F31DAC20D8BC2400F1EDC7 /* CountryServiceTests.swift */; };
 		4CFCA1B26035503E00A06EBA /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5961F24768B4A9D622BE5D /* Pods_SwiftDemo.framework */; };
 		A517B83B8E17A5CE40F9462C /* Pods_SwiftDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F509E130FEA0C07803514E95 /* Pods_SwiftDemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		34B8FC7720D7E9ED00D3942E /* CountryAttributesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryAttributesTableViewCell.swift; sourceTree = "<group>"; };
 		34F31DA820D8AC4100F1EDC7 /* CountryDataViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDataViewModelTests.swift; sourceTree = "<group>"; };
 		34F31DAA20D8B76400F1EDC7 /* CountryAttributesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryAttributesViewModelTests.swift; sourceTree = "<group>"; };
+		34F31DAC20D8BC2400F1EDC7 /* CountryServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryServiceTests.swift; sourceTree = "<group>"; };
 		4A5961F24768B4A9D622BE5D /* Pods_SwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E64B163A34D63242D52BC3 /* Pods-SwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B901B16DBCA71B4D0CB6258C /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				34F31DA820D8AC4100F1EDC7 /* CountryDataViewModelTests.swift */,
 				34F31DAA20D8B76400F1EDC7 /* CountryAttributesViewModelTests.swift */,
+				34F31DAC20D8BC2400F1EDC7 /* CountryServiceTests.swift */,
 				341A018620D63D1800CFF782 /* Info.plist */,
 			);
 			path = SwiftDemoTests;
@@ -413,6 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34F31DAD20D8BC2400F1EDC7 /* CountryServiceTests.swift in Sources */,
 				34F31DAB20D8B76400F1EDC7 /* CountryAttributesViewModelTests.swift in Sources */,
 				34F31DA920D8AC4100F1EDC7 /* CountryDataViewModelTests.swift in Sources */,
 			);
